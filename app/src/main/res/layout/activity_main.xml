@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+     android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:weightSum="2"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@android:drawable/ic_menu_revert"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        android:onClick="GoWest"
+        android:id="@+id/GoWest"></androidx.appcompat.widget.AppCompatImageButton>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/TextBox1"
+        android:paddingTop="120dp"
+        android:hint="Texto 1"
+        android:visibility="visible"></EditText>
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10sp"
+        android:max="10"
+        android:id="@+id/Quantity1"></SeekBar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/Limits1">
+
+        <TextView
+            android:layout_width="42sp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="15sp"
+            android:paddingLeft="12sp"
+            ></TextView>
+        <TextView
+            android:layout_width="42sp"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="15sp"
+            android:layout_marginLeft="350sp"
+            android:id="@+id/Max1"
+            ></TextView>
+    </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:inputType="text"
+        android:id="@+id/TextBox2"
+        android:hint="Texto 2"
+        android:visibility="visible"></EditText>
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10sp"
+        android:max="10"
+        android:id="@+id/Quantity2"></SeekBar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/Limits2">
+
+        <TextView
+            android:layout_width="42sp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="15sp"
+            android:paddingLeft="12sp"
+            ></TextView>
+        <TextView
+            android:layout_width="42sp"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="15sp"
+            android:layout_marginLeft="350sp"
+            android:id="@+id/Max2"
+            ></TextView>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Me the Money!"
+        android:layout_marginTop="30sp"
+        android:fontFamily="sans-serif-black"
+        android:id="@+id/Botorito"
+        android:visibility="visible"
+        android:onClick="ApretaElBoton"
+        ></Button>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:text=" "
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:id="@+id/Results"
+        ></TextView>
+
+</LinearLayout>
