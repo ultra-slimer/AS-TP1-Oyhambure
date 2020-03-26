@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         Quantity2 = findViewById(R.id.Quantity2);
         Max1 = findViewById(R.id.Max1);
         Max2 = findViewById(R.id.Max2);
+        //Esto de aca cumple la funcion de detectar cuando el texto cambia y que accion tomar antes
+        //durante y despues del cambio del codigo
         Textito1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
