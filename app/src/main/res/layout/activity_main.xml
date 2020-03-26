@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="10"
             android:textSize="15sp"
-            android:layout_marginLeft="350sp"
+            android:layout_marginLeft="340sp"
             android:id="@+id/Max1"
             ></TextView>
     </LinearLayout>
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:text="10"
             android:textSize="15sp"
-            android:layout_marginLeft="350sp"
+            android:layout_marginLeft="340sp"
             android:id="@+id/Max2"
             ></TextView>
     </LinearLayout>
