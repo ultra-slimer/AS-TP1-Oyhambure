@@ -3,6 +3,7 @@ package com.example.tp1_oyhambure;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Editable;
@@ -86,10 +87,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void ApretaElBoton (View Vision){
+    public void ApretaElBoton(View Vision) {
 
         if (Textito1.getText().toString().length() < Quantity1.getProgress() ||
-                Textito2.getText().toString().length() < Quantity2.getProgress()){
+                Textito2.getText().toString().length() < Quantity2.getProgress()) {
             //En caso de que esto se ejecute, corran por sus vidas
             String Message = ("ERROR: Largo pedido excede algun largo de los textos");
             Toast.makeText(this, Message, Toast.LENGTH_SHORT);
@@ -102,18 +103,17 @@ public class MainActivity extends AppCompatActivity {
         int Largo2 = Texto2.length();
 
         String Diferencia;
-        if(Largo1 == Largo2){
+        if (Largo1 == Largo2) {
             Diferencia = "None";
-        }
-        else {
+        } else {
             int Diff = Largo1 - Largo2;
-            if (Diff < 0){
+            if (Diff < 0) {
                 Diff = Diff * -1;
             }
             Diferencia = String.valueOf(Diff);
         }
         String Concatenar = (Texto1.substring(0, Quantity1.getProgress()) + Texto2.substring(0, Quantity2.getProgress()));
-//Estos de aca son innecesarios para los resultados asi que se pueden retirar
+        //Estos de aca son innecesarios para los resultados asi que se pueden retirar
         Textito1.setVisibility(View.GONE);
         Textito2.setVisibility(View.GONE);
         Botoncito.setVisibility(View.GONE);
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         Quantity2.setVisibility(View.GONE);
         Limits1.setVisibility(View.GONE);
         Limits2.setVisibility(View.GONE);
-//Estos me sirven mucho para los resultados asi que deben de estar presentes
+        //Estos me sirven mucho para los resultados asi que deben de estar presentes
         GoWest.setVisibility(View.VISIBLE);
         results.setVisibility(View.VISIBLE);
 
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 " caracteres\n" +
                 "Concatenado de los caracteres: " + Concatenar);
     }
-    public void GoWest(View Vision){
+    public void GoWest(View Vision) {
         results.setText("");
         //Estos me sirven mucho para los resultados asi que deben de estar presentes
         Textito1.setVisibility(View.VISIBLE);
@@ -149,5 +149,23 @@ public class MainActivity extends AppCompatActivity {
         results.setVisibility(View.GONE);
         Quantity1.refreshDrawableState();
         Quantity2.refreshDrawableState();
+    }
+    public void ChangeActivity(View Vistaso){
+        Intent Call;
+        Button Pressed;
+        Pressed = (Button)Vistaso;
+        if(Pressed.getText().toString().contains("1")) {
+            Call = new Intent(this, MainActivity.class);
+        }
+        else if(Pressed.getText().toString().contains("2")){
+            Call = new Intent(this, Part2Activity.class);
+        }
+        /*else {
+            Call = new Intent(this, Part3Activity.class);
+        }*/
+        else{
+            return;
+        }
+        startActivity(Call);
     }
 }
