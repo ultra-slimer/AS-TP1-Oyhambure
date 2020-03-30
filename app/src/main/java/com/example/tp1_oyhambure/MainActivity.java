@@ -155,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
         Button Pressed;
         Pressed = (Button)Vistaso;
         if(Pressed.getText().toString().contains("1")) {
+            Toast.makeText(this, "Vamos al 1", Toast.LENGTH_SHORT);
             Call = new Intent(this, MainActivity.class);
         }
         else if(Pressed.getText().toString().contains("2")){

@@ -7,19 +7,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        style="?android:attr/buttonBarStyle">
+        style="?android:attr/buttonBarStyle"
+        android:id="@+id/ActivityChooser">
         <Button
             android:layout_width="200dp"
             android:layout_height="match_parent"
             android:text="Actividad 1"
-            android:id="@+id/ChangeActX"
-            style="?android:buttonBarButtonStyle"></Button>
+            style="?android:buttonBarButtonStyle"
+            android:onClick="ChangeActivity"></Button>
         <Button
             android:layout_width="200dp"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
             android:text="Actividad 3"
-            android:id="@+id/ChangeActY"
             style="?android:buttonBarButtonStyle"
             android:onClick="ChangeActivity"></Button>
         </LinearLayout>
@@ -31,4 +31,28 @@
         android:visibility="gone"
         android:onClick="GetBack"
         android:id="@+id/GetBack"></androidx.appcompat.widget.AppCompatImageButton>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese Texto"
+            android:id="@+id/Texto"
+            android:maxLength="@android:integer/config_longAnimTime"></EditText>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/LimitCheck"></CheckBox>
+    </LinearLayout>
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Letter"
+        android:maxLength="1"></EditText>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Botoncito"></Button>
 </LinearLayout>
