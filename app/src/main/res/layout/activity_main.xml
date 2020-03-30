@@ -3,9 +3,27 @@
      android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:weightSum="2"
     >
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle">
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="Actividad 2"
+            android:id="@+id/ChangeActX"
+            style="?android:buttonBarButtonStyle"
+            android:onClick="ChangeActivity"></Button>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:text="Actividad 3"
+            android:id="@+id/ChangeActY"
+            style="?android:buttonBarButtonStyle"></Button>
+    </LinearLayout>
     <androidx.appcompat.widget.AppCompatImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -40,14 +58,16 @@
             android:layout_height="wrap_content"
             android:text="0"
             android:textSize="15sp"
-            android:paddingLeft="12sp"
+            android:paddingStart="12sp"
+            android:paddingEnd="0sp"
             ></TextView>
         <TextView
             android:layout_width="42sp"
             android:layout_height="wrap_content"
             android:text="10"
             android:textSize="15sp"
-            android:layout_marginLeft="340sp"
+            android:layout_marginStart="340sp"
+            android:layout_marginEnd="0sp"
             android:id="@+id/Max1"
             ></TextView>
     </LinearLayout>
@@ -76,14 +96,16 @@
             android:layout_height="wrap_content"
             android:text="0"
             android:textSize="15sp"
-            android:paddingLeft="12sp"
+            android:paddingStart="12sp"
+            android:paddingEnd="0sp"
             ></TextView>
         <TextView
             android:layout_width="42sp"
             android:layout_height="wrap_content"
             android:text="10"
             android:textSize="15sp"
-            android:layout_marginLeft="340sp"
+            android:layout_marginStart="340sp"
+            android:layout_marginEnd="0sp"
             android:id="@+id/Max2"
             ></TextView>
     </LinearLayout>
