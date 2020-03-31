@@ -34,7 +34,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/IngresoYCheck"
+        android:visibility="visible">
         <EditText
             android:layout_width="380dp"
             android:layout_height="wrap_content"
@@ -50,9 +52,21 @@
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:id="@+id/Letter"
-        android:maxLength="1"></EditText>
+        android:maxLength="1"
+        android:visibility="visible"></EditText>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Botoncito"></Button>
+        android:id="@+id/Botoncito"
+        android:onClick="MostrarLetras"
+        android:visibility="visible"
+        android:text="I'm going to find you"></Button>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:text=" "
+        android:visibility="gone"
+        android:id="@+id/Responses"></TextView>
 </LinearLayout>
