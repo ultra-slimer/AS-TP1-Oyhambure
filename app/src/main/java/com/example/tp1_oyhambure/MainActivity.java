@@ -20,19 +20,19 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText Textito1;
-    EditText Textito2;
-    Button Botoncito;
+    private EditText Textito1;
+    private EditText Textito2;
+    private Button Botoncito;
     //Esta de aca abajo es para poder volver de la pantalla resultados a la pantalla
     //de ingreso de datos.
-    AppCompatImageButton GoWest;
-    TextView results;
-    LinearLayout Limits1;
-    LinearLayout Limits2;
-    SeekBar Quantity1;
-    SeekBar Quantity2;
-    TextView Max1;
-    TextView Max2;
+    private AppCompatImageButton GoWest;
+    private TextView results;
+    private LinearLayout Limits1;
+    private LinearLayout Limits2;
+    private SeekBar Quantity1;
+    private SeekBar Quantity2;
+    private TextView Max1;
+    private TextView Max2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,46 +93,51 @@ public class MainActivity extends AppCompatActivity {
                 Textito2.getText().toString().length() < Quantity2.getProgress()) {
             //En caso de que esto se ejecute, corran por sus vidas
             String Message = ("ERROR: Largo pedido excede algun largo de los textos");
-            Toast.makeText(this, Message, Toast.LENGTH_SHORT);
+            Toast.makeText(this, Message, Toast.LENGTH_SHORT).show();
             return;
         }
-        String Texto1 = Textito1.getText().toString();
-        String Texto2 = Textito2.getText().toString();
+        if(Textito1.length() != 0 && Textito2.length() != 0) {
+            String Texto1 = Textito1.getText().toString();
+            String Texto2 = Textito2.getText().toString();
 
-        int Largo1 = Texto1.length();
-        int Largo2 = Texto2.length();
+            int Largo1 = Texto1.length();
+            int Largo2 = Texto2.length();
 
-        String Diferencia;
-        if (Largo1 == Largo2) {
-            Diferencia = "None";
-        } else {
-            int Diff = Largo1 - Largo2;
-            if (Diff < 0) {
-                Diff = Diff * -1;
+            String Diferencia;
+            if (Largo1 == Largo2) {
+                Diferencia = "None";
+            } else {
+                int Diff = Largo1 - Largo2;
+                if (Diff < 0) {
+                    Diff = Diff * -1;
+                }
+                Diferencia = String.valueOf(Diff);
             }
-            Diferencia = String.valueOf(Diff);
+            String Concatenar = (Texto1.substring(0, Quantity1.getProgress()) + Texto2.substring(0, Quantity2.getProgress()));
+            //Estos de aca son innecesarios para los resultados asi que se pueden retirar
+            Textito1.setVisibility(View.GONE);
+            Textito2.setVisibility(View.GONE);
+            Botoncito.setVisibility(View.GONE);
+            Quantity1.setVisibility(View.GONE);
+            Quantity2.setVisibility(View.GONE);
+            Limits1.setVisibility(View.GONE);
+            Limits2.setVisibility(View.GONE);
+            //Estos me sirven mucho para los resultados asi que deben de estar presentes
+            GoWest.setVisibility(View.VISIBLE);
+            results.setVisibility(View.VISIBLE);
+
+            Textito1.setText("");
+            Textito2.setText("");
+
+            results.setText("Largo Texto 1: " + Largo1 + " caracteres\n" +
+                    "Largo Texto 2: " + Largo2 + " caracteres\n" +
+                    "Diferencia Largo de textos: " + Diferencia +
+                    " caracteres\n" +
+                    "Concatenado de los caracteres: " + Concatenar);
         }
-        String Concatenar = (Texto1.substring(0, Quantity1.getProgress()) + Texto2.substring(0, Quantity2.getProgress()));
-        //Estos de aca son innecesarios para los resultados asi que se pueden retirar
-        Textito1.setVisibility(View.GONE);
-        Textito2.setVisibility(View.GONE);
-        Botoncito.setVisibility(View.GONE);
-        Quantity1.setVisibility(View.GONE);
-        Quantity2.setVisibility(View.GONE);
-        Limits1.setVisibility(View.GONE);
-        Limits2.setVisibility(View.GONE);
-        //Estos me sirven mucho para los resultados asi que deben de estar presentes
-        GoWest.setVisibility(View.VISIBLE);
-        results.setVisibility(View.VISIBLE);
-
-        Textito1.setText("");
-        Textito2.setText("");
-
-        results.setText("Largo Texto 1: " + Largo1 + " caracteres\n" +
-                "Largo Texto 2: " + Largo2 + " caracteres\n" +
-                "Diferencia Largo de textos: " + Diferencia +
-                " caracteres\n" +
-                "Concatenado de los caracteres: " + Concatenar);
+        else{
+            Toast.makeText(this, "Por favor ingrese un texto en ambos campos", Toast.LENGTH_SHORT).show();
+        }
     }
     public void GoWest(View Vision) {
         results.setText("");
