@@ -65,11 +65,8 @@ public class Part2Activity extends AppCompatActivity {
         } else if (Pressed.getText().toString().contains("2")) {
             Call = new Intent(this, Part2Activity.class);
         }
-        /*else {
-            Call = new Intent(this, Part3Activity.class);
-        }*/
         else {
-            return;
+            Call = new Intent(this, Part3Activity.class);
         }
         startActivity(Call);
     }
@@ -78,11 +75,15 @@ public class Part2Activity extends AppCompatActivity {
         String Textito = String.valueOf(Texto.getText());
         String Comp = "";
         int Count = 0;
+        int CountOpp = 0;
         if(Buscado.length() != 0 && Textito.length() != 0) {
             for (int i = 0; i < Textito.length(); i++) {
                 String Idexito = Textito.substring(i, i + 1);
                 if (Idexito.contains(Buscado)) {
                     Count++;
+                }
+                else if(Idexito.contains(Buscado.toLowerCase()) || Idexito.contains(Buscado.toUpperCase())){
+                    CountOpp++;
                 }
             }
             LL.setVisibility(View.GONE);
@@ -90,8 +91,15 @@ public class Part2Activity extends AppCompatActivity {
             Letra.setVisibility(View.GONE);
             GetBack.setVisibility(View.VISIBLE);
             Results.setVisibility(View.VISIBLE);
-
-            Results.setText("La cantidad de letras \"" + Buscado + "\" es: " + Count);
+            if(Buscado != Buscado.toLowerCase()){
+                Results.setText("La cantidad de letras \"" + Buscado + "\" es: " + Count + " y para \"" + Buscado.toLowerCase() + "\" hay: " + CountOpp);
+            }
+            else if (Buscado != Buscado.toUpperCase()){
+                Results.setText("La cantidad de letras \"" + Buscado + "\" es: " + Count + " y para \"" + Buscado.toUpperCase() + "\" hay: " + CountOpp);
+            }
+            else{
+                Results.setText("La cantidad de letras \"" + Buscado + "\" es: " + Count);
+            }
         }
         else{
             Toast.makeText(this, "Por favor ingrese alguna letra a buscar", Toast.LENGTH_LONG).show();

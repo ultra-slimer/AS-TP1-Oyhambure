@@ -20,7 +20,8 @@
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
             android:text="Actividad 3"
-            style="?android:buttonBarButtonStyle"></Button>
+            style="?android:buttonBarButtonStyle"
+            android:onClick="ChangeActivity"></Button>
     </LinearLayout>
     <androidx.appcompat.widget.AppCompatImageButton
         android:layout_width="50dp"

@@ -166,11 +166,8 @@ public class MainActivity extends AppCompatActivity {
         else if(Pressed.getText().toString().contains("2")){
             Call = new Intent(this, Part2Activity.class);
         }
-        /*else {
+        else {
             Call = new Intent(this, Part3Activity.class);
-        }*/
-        else{
-            return;
         }
         startActivity(Call);
     }
