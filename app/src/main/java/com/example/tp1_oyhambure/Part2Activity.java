@@ -39,22 +39,6 @@ public class Part2Activity extends AppCompatActivity {
         botoncito = findViewById(R.id.Botoncito);
         GetBack = findViewById(R.id.GetBack);
         Results = findViewById(R.id.Responses);
-        Chequi.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                if(Chequi.isChecked()){
-                    Texto.setFilters(new InputFilter[] {new InputFilter.LengthFilter(10)});
-                    if(Texto.getText().length() > 10){
-                        CharSequence LOLO = Texto.getText().subSequence(0, 10);
-                        Texto.setText(LOLO);
-                    }
-                }
-                else{
-                    Texto.setFilters(new InputFilter[] {new InputFilter.LengthFilter(99999)});
-                }
-            }
-        });
     }
     public void ChangeActivity(View Vistaso) {
         Intent Call;
@@ -71,6 +55,10 @@ public class Part2Activity extends AppCompatActivity {
         startActivity(Call);
     }
     public void MostrarLetras(View Vistaza){
+        if(Chequi.isChecked() && Texto.getText().length() < 10){
+            Toast.makeText(this, "Ingresa un texto de mas de 10 caracteres", Toast.LENGTH_LONG ).show();
+            return;
+        }
         String Buscado = String.valueOf(Letra.getText());
         String Textito = String.valueOf(Texto.getText());
         String Comp = "";

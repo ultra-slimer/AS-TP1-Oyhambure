@@ -18,7 +18,7 @@ public class Part3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_part3);
+            setContentView(R.layout.activity_part3);
         Invertido = findViewById(R.id.Invertido);
         Hacerlo = findViewById(R.id.Inversor);
         Resultado = findViewById(R.id.Inversion);
